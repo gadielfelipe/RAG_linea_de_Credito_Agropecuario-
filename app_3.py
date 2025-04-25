@@ -27,7 +27,6 @@ st.title("¿Necesitas información sobre la Línea ANT de Finagro? Pregunta aqu�
 
 question = st.text_input("Ingresa tu pregunta sobre la Línea ANT de Finagro:", placeholder="Ejemplo: ¿Cuáles son los requisitos para acceder?")
 
-# --- Process Question and Call API ---
 if st.button("Obtener respuesta") and question:
     with st.spinner("Buscando respuesta..."):
         # Prepare request payload
