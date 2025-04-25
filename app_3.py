@@ -3,11 +3,10 @@ import requests
 import json
 import fitz  # PyMuPDF
 
-# --- ✅ MUST BE FIRST COMMAND IN STREAMLIT ---
 st.set_page_config(page_title="Asistente Virtual Línea ANT - Finagro", page_icon="logo_finagro.png")
 
-# --- API Configuration ---
-API_KEY = "AIzaSyAD7fHhvjm4VmGZI1AjXsmNlkXeluit5a4"  # Replace with your actual API key
+
+API_KEY = "AIzaSyAD7fHhvjm4VmGZI1AjXsmNlkXeluit5a4" 
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
 HEADERS = {"Content-Type": "application/json"}
 
@@ -19,16 +18,13 @@ def extract_text_from_pdf(pdf_path):
             text += page.get_text()
     return text
 
-# ✅ Extract text from the document
 pdf_text = extract_text_from_pdf("Resolucion2025.pdf")
 
-# --- Logo ---
 st.image("logo_finagro.png", width=200)
 
-# --- Main Heading ---
 st.title("¿Necesitas información sobre la Línea ANT de Finagro? Pregunta aquí sobre requisitos, condiciones y beneficiarios.")
 
-# --- Input Section ---
+
 question = st.text_input("Ingresa tu pregunta sobre la Línea ANT de Finagro:", placeholder="Ejemplo: ¿Cuáles son los requisitos para acceder?")
 
 # --- Process Question and Call API ---
@@ -64,7 +60,7 @@ if st.button("Obtener respuesta") and question:
         else:
             st.error("Error: No se pudo obtener una respuesta. Intente nuevamente más tarde.")
 
-# --- Welcome Message (First Visit) ---
+
 if 'first_visit' not in st.session_state:
     st.session_state['first_visit'] = True
     st.info("¡Bienvenido! Este asistente virtual te ayudará con tus preguntas sobre la Línea ANT de Finagro.")
