@@ -10,16 +10,6 @@ API_KEY = "AIzaSyAD7fHhvjm4VmGZI1AjXsmNlkXeluit5a4"
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
 HEADERS = {"Content-Type": "application/json"}
 
-def extract_text_from_pdf(pdf_path):
-    text = ""
-    with fitz.open(pdf_path) as doc:
-        for page in doc:
-            text += page.get_text()
-    return text
-
-
-
-
 def extract_texts_from_pdfs(pdf_paths):
     text = ""
     for pdf_path in pdf_paths:
