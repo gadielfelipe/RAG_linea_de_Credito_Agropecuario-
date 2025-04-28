@@ -18,8 +18,18 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 
-pdf_files=["Resolucion2025.pdf","SobrelineaANT.pdf"]
-pdf_text = extract_text_from_pdf(pdf_files)
+
+
+def extract_texts_from_pdfs(pdf_paths):
+    text = ""
+    for pdf_path in pdf_paths:
+        with fitz.open(pdf_path) as doc:
+            for page in doc:
+                text += page.get_text()
+    return text
+
+pdf_files = ["Resolucion2025.pdf", "SobrelineaANT.pdf"]
+pdf_text = extract_texts_from_pdfs(pdf_files)
 
 st.image("logo_finagro.png", width=200)
 
