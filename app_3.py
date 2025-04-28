@@ -18,7 +18,7 @@ def extract_texts_from_pdfs(pdf_paths):
                 text += page.get_text()
     return text
 
-pdf_files = ["Resolucion2025.pdf", "SobrelineaANT.pdf"]
+pdf_files = ["Resolucion2025.pdf", "SobrelineaANT.pdf","Título4.pdf"]
 
 pdf_text = ""
 for pdf_file in pdf_files:
