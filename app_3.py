@@ -19,7 +19,10 @@ def extract_texts_from_pdfs(pdf_paths):
     return text
 
 pdf_files = ["Resolucion2025.pdf", "SobrelineaANT.pdf"]
-pdf_text = extract_texts_from_pdfs(pdf_files)
+
+pdf_text = ""
+for pdf_file in pdf_files:
+    pdf_text = extract_text_from_pdf(pdf_file)
 
 st.image("logo_finagro.png", width=200)
 
