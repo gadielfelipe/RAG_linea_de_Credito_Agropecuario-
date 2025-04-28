@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 import json
-import fitz  # PyMuPDF
+import fitz
 
 st.set_page_config(page_title="Asistente Virtual Línea ANT - Finagro", page_icon="logo_finagro.png")
 
